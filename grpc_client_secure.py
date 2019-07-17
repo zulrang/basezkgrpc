@@ -41,8 +41,7 @@ def main():
         if random.randint(0, 1) == 0:
             total += calculator.SquareRoot(value=random.randint(1, 100000)).value
         else:
-            total += calculator.Add(x=1, y=random.randint(1, 100000))# .value
-        print("Total: {}".format(total))
+            total += calculator.Add(x=1, y=random.randint(1, 100000)).value
     # et voilà
     print("{} calls per sec".format(max / (time.time() - start_time)))
 

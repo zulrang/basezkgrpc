@@ -45,7 +45,7 @@ class BaseZKgRPC():
             request_package, request_class_name = request_class_package.rsplit('.', 1)
             request_class = getattr(importlib.import_module(request_package), request_class_name)
             # create method to call lambda which passes info to generic method
-            setattr(self, method_name, lambda **v: self.call_method(method_name, request_class, **v))
+            setattr(self, method_name, lambda method_name=method_name, request_class=request_class, **v: self.call_method(method_name, request_class, **v))
 
     def kazoo_listener(self, state):
         """Zookeeper state change handler monitors connection and flags availability"""

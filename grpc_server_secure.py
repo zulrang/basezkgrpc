@@ -36,6 +36,7 @@ class CalculatorServicer(calculator_pb2_grpc.CalculatorServicer):
     def Add(self, request, context):
         response = calculator_pb2.Number()
         response.value = calculator.add(request.x, request.y)
+        return response
 
 
 def run_server():
