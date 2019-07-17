@@ -34,7 +34,7 @@ class CalculatorServicer(calculator_pb2_grpc.CalculatorServicer):
         return response
 
     def Add(self, request, context):
-        response = calculator_pb2.NumberPair()
+        response = calculator_pb2.Number()
         response.value = calculator.add(request.x, request.y)
 
 

@@ -24,7 +24,7 @@ class Calculator(BaseZKgRPC):
     STUB_CLASS = 'calculator_pb2_grpc.CalculatorStub'
 
     METHODS = [
-        # method name, request class
+        # method name, request class, response class
         ('SquareRoot', 'calculator_pb2.Number'),
         ('Add', 'calculator_pb2.NumberPair')
     ]
