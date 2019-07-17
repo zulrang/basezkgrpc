@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message Number {
+    float value = 1;
+}
+
+message NumberPair {
+    float x = 1;
+    float y = 2;
+}
+
+service Calculator {
+    rpc SquareRoot(Number) returns (Number) {}
+    rpc Add(NumberPair) returns (Number) {}
+}
